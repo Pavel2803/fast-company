@@ -10,7 +10,7 @@ const User = ({
     profession,
     completedMeetings,
     rate,
-    handleDelete,
+    onDelete,
     bookmark,
     onToggleBookMark
 }) => {
@@ -34,7 +34,7 @@ const User = ({
             <td>
                 <button
                     className={"btn btn-danger"}
-                    onClick={() => handleDelete(_id)}
+                    onClick={() => onDelete(_id)}
                 >
                     Удалить
                 </button>
@@ -50,7 +50,7 @@ User.propTypes = {
     profession: PropTypes.objectOf(PropTypes.string.isRequired),
     completedMeetings: PropTypes.number.isRequired,
     rate: PropTypes.number.isRequired,
-    handleDelete: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired,
     onToggleBookMark: PropTypes.func.isRequired,
     bookmark: PropTypes.bool.isRequired
 };

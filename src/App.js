@@ -24,7 +24,7 @@ const App = () => {
         <div>
             <SearchStatus length={users.length} />
             <Users
-                onClick={handleDelete}
+                onDelete={handleDelete}
                 onToggleBookMark={handleToggleBookMark}
                 users={users}
             />
