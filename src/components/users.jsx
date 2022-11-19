@@ -27,7 +27,7 @@ const Users = ({ users: allUsers, ...rest }) => {
         setCurentPage(pageIndex);
     };
     const filtredUsers = selectedProf
-        ? allUsers.filter((user) => user.profession === selectedProf)
+        ? allUsers.filter((user) => user.profession._id === selectedProf._id)
         : allUsers;
     const count = filtredUsers.length;
     const userCrop = paginate(filtredUsers, currentPage, pageSize);
@@ -36,7 +36,7 @@ const Users = ({ users: allUsers, ...rest }) => {
     };
 
     return (
-        <div className="div-flex">
+        <div className="d-flex">
             {professions && (
                 <div className="d-flex flex-column flex-shrink-0 p-3">
                     <GroupList
@@ -74,7 +74,7 @@ const Users = ({ users: allUsers, ...rest }) => {
                         </tbody>
                     </table>
                 )}
-                <div className="d-flex justify-content-centr">
+                <div className="d-flex justify-content-center">
                     <Pagination
                         itemsCount={count}
                         pageSize={pageSize}
